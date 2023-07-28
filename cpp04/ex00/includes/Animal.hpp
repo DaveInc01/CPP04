@@ -14,6 +14,7 @@ public:
     //setters and getters
     void setType( std::string tp );
     std::string getType( void );
+    void makeSound( void );
 protected:
     std::string type;
 };

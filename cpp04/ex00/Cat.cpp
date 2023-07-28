@@ -6,11 +6,11 @@ Cat::Cat( void )
     this->type = "Cat";
 }
 
-// Cat::Cat( Cat &copy )
-// {
-//     *this = copy;
-//     std::cout << "Copy constructor of Cat was called" << std::endl;
-// }
+Cat::Cat( Cat &copy ) : Animal(copy)
+{
+    this->type = copy.type;
+    std::cout << "Copy constructor of Cat was called" << std::endl;
+}
 
 void Cat::makeSound(){
     std::cout << "Meow-Meow ˶ᵔ ᵕ ᵔ˶ " << std::endl;

@@ -3,10 +3,12 @@
 #include "includes/Dog.hpp"
 
 int main(){
+    Animal giraf;
     Cat mia;
-    Dog ostin;
     mia.setType("koshka");
-    std::cout << "mia type is still " << mia.getType() << std::endl;
     mia.makeSound();
-    ostin.makeSound();
+    Dog rex;
+    rex.setType("sobaka");
+    rex.makeSound();
+    giraf.makeSound();
 }
