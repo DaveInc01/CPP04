@@ -12,6 +12,11 @@ Dog::Dog( Dog &copy ) : Animal(copy)
     std::cout << "Copy constructor of Dog was called" << std::endl;
 }
 
+void Dog::operator=( Dog &other )
+{
+    this->type = other.type;
+}
+
 void Dog::makeSound(){
     std::cout << "Haf-Haf (＾ᴥ＾)" << std::endl;
 }

@@ -1,16 +1,16 @@
-#ifndef ANIMAL_HPP
-# define ANIAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include <iostream>
 #pragma once
 
 
-class Animal {
+class WrongAnimal {
 public:
-    Animal( void );
-    Animal( Animal &copy );
-    void operator=(Animal &other);
-    ~Animal();
+    WrongAnimal( void );
+    WrongAnimal( WrongAnimal &copy );
+    void operator=(WrongAnimal &other);
+    ~WrongAnimal();
     //setters and getters
     void setType( std::string tp );
     std::string getType( void );

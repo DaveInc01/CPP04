@@ -12,6 +12,11 @@ Cat::Cat( Cat &copy ) : Animal(copy)
     std::cout << "Copy constructor of Cat was called" << std::endl;
 }
 
+void Cat::operator=( Cat &other )
+{
+    this->type = other.type;
+}
+
 void Cat::makeSound(){
     std::cout << "Meow-Meow ˶ᵔ ᵕ ᵔ˶ " << std::endl;
 }

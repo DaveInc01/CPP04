@@ -16,7 +16,9 @@ void Animal::operator=( Animal &other )
     this->type = other.type;
 }
 
-void Animal::makeSound(){}
+void Animal::makeSound(){
+    std::cout << "Some animal sounds ..." << std::endl;
+}
 //getters and setters
 void Animal::setType(std::string tp)
 {

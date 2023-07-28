@@ -7,6 +7,7 @@ class Dog: public Animal{
 public:
     Dog( void );
     Dog( Dog &copy );
+    void operator=(Dog &other);
     void makeSound();
     ~Dog( void );
 };
