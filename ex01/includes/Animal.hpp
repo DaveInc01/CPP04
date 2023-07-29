@@ -10,11 +10,11 @@ public:
     Animal( void );
     Animal( Animal &copy );
     void operator=(Animal &other);
-    ~Animal();
+    virtual ~Animal();
     //setters and getters
     void setType( std::string tp );
     std::string getType( void );
-    void makeSound( void );
+    virtual void makeSound( void );
 protected:
     std::string type;
 };

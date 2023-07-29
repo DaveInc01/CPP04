@@ -9,8 +9,9 @@ public:
     Cat( void );
     Cat( Cat &copy );
     void operator=( Cat &other );
-    void makeSound();
-    ~Cat( void );
+    void makeSound( void );
+    void foo();
+    ~Cat();
 private:
     Brain *brn;
 };

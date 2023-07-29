@@ -23,6 +23,10 @@ void Cat::makeSound(){
     std::cout << "Meow-Meow ˶ᵔ ᵕ ᵔ˶ " << std::endl;
 }
 
+void Cat::foo(){
+    std::cout << "I am the Cat class method :)" << std::endl;
+}
+
 Cat::~Cat(){
     std::cout << "The Cat was destroyed" << std::endl;
     delete this->brn;

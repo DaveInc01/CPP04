@@ -5,16 +5,26 @@
 #include "includes/WrongCat.hpp"
 
 int main(){
-    Animal animals[10];
-    for (int i = 0; i < 10; i++)
+    // const Animal* d = new Dog(); 
+    // const Animal* c = new Cat();
+
+    Animal* arr[100];
+    for (int i = 0; i < 100; i++)
     {
-        if(i >=5 )
+        if (i >= 50)
         {
-            animals[i] = new Dog();
+            arr[i] = new Dog();
+        }
+        else{
+            arr[i] = new Cat();
         }
     }
-    // mia.setType("koshka");
-    // mia.makeSound();
+    arr[30]->makeSound();
+    arr[70]->makeSound();
+    for (int i = 0; i < 100; i++)
+    {
+        delete arr[i];
+    }
     // Dog rex;
     // rex.setType("sobaka");
     // rex.makeSound();
