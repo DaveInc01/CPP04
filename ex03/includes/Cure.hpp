@@ -2,6 +2,10 @@
 #define CURE_HPP
 
 #include "./AMateria.hpp"
+#include "./ICharacter.hpp"
+
+class ICharacter;
+class AMateria;
 
 class Cure : public AMateria
 {
@@ -10,10 +14,8 @@ public:
     Cure( Cure& copy );
     void operator=( Cure& other );
     ~Cure();
-    AMateria* clone();
+    AMateria* clone() const;
     void use(ICharacter& target);
-private:
-    std::string type;
 };
 
 #endif

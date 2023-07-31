@@ -15,14 +15,14 @@ void Cure::operator=(Cure& other)
     this->type = other.type;
 }
 
-AMateria* Cure::clone()
+AMateria* Cure::clone () const
 {
     AMateria *CurePtr = new Cure(); 
     return (CurePtr);
 }
 
-void Cure:use(ICharacter& target)
+void Cure::use(ICharacter& target)
 {
-    std:cout << "* shoots an ice bolt at " << target.name << " *" << std::endl;
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 
