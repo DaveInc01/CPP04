@@ -5,8 +5,8 @@
 #include "includes/WrongCat.hpp"
 
 int main(){
-    Animal* d = new Dog(); 
-    Animal* c = new Cat();
+    AAnimal* d = new Dog(); 
+    AAnimal* c = new Cat();
 
     d->makeSound();
     c->makeSound();
@@ -14,7 +14,7 @@ int main(){
     delete d;
     delete c;
 
-    Animal* arr[10];
+    AAnimal* arr[10];
     for (int i = 0; i < 10; i++)
     {
         if (i >= 5)
