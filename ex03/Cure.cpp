@@ -5,7 +5,7 @@ Cure::Cure( void )
     this->type = "Cure";
 }
 
-Cure::Cure(Cure &copy)
+Cure::Cure( Cure & copy) : AMateria(copy)
 {
     this->type = copy.type;
 }
@@ -26,3 +26,4 @@ void Cure::use(ICharacter& target)
     std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 
+Cure::~Cure(){}

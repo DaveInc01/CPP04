@@ -11,7 +11,7 @@ class Cure : public AMateria
 {
 public:
     Cure( void );
-    Cure( Cure& copy );
+    Cure( Cure& );
     void operator=( Cure& other );
     ~Cure();
     AMateria* clone() const;

@@ -1,11 +1,11 @@
 #include "includes/Ice.hpp"
 
-Ice::Ice( void )
+Ice::Ice( void ) : AMateria()
 {
     this->type = "ice";
 }
 
-Ice::Ice(Ice &copy)
+Ice::Ice(Ice &copy) : AMateria(copy)
 {
     this->type = copy.type;
 }
@@ -25,3 +25,5 @@ void Ice::use(ICharacter& target)
 {
     std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
+
+Ice::~Ice(){}
