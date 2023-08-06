@@ -1,9 +1,18 @@
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
+#pragma once
+// #include "AMateria.hpp"
+// #include <iostream>
 
-#include "./ICharacter.hpp"
+// #include "AMateria.hpp"
+// #include "Ice.hpp"
+// #include "Cure.hpp"
+// #include <iostream>
+// #include <string>
+#include "ICharacter.hpp"
 
-class ICharacter;
+
+// class ICharacter; 
 
 class Character : public ICharacter
 {
@@ -17,8 +26,9 @@ public:
     void equip(AMateria* m);
     void unequip(int idx);
     void use(int idx, ICharacter& target);
-protected:
-    AMateria* slot;
-}
+private:
+    AMateria* slot[4];
+    int _used_slots;
+};
 
 # endif
