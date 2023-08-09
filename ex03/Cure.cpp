@@ -2,7 +2,7 @@
 
 Cure::Cure( void )
 {
-    this->type = "Cure";
+    this->type = "cure";
 }
 
 Cure::Cure( Cure & copy) : AMateria(copy)
@@ -17,13 +17,13 @@ void Cure::operator=(Cure& other)
 
 AMateria* Cure::clone () const
 {
-    AMateria *CurePtr = new Cure(); 
+    AMateria *CurePtr = new Cure();
     return (CurePtr);
 }
 
 void Cure::use(ICharacter& target)
 {
-    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+    std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }
 
 Cure::~Cure(){}

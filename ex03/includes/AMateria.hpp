@@ -12,7 +12,7 @@ public:
     AMateria( void );
     AMateria( AMateria& copy );
     void operator=( AMateria& other );
-    ~AMateria();
+    virtual ~AMateria();
     AMateria(std::string const & type);
     std::string const & getType() const; //Returns the materia type
     virtual AMateria* clone() const = 0;

@@ -12,7 +12,7 @@
 #include "ICharacter.hpp"
 
 
-// class ICharacter; 
+// class ICharacter;
 
 class Character : public ICharacter
 {
@@ -26,8 +26,9 @@ public:
     void equip(AMateria* m);
     void unequip(int idx);
     void use(int idx, ICharacter& target);
+    // void show_slot_type(int idx);
 private:
-    AMateria* slot[4];
+    AMateria* slots[4];
     int _used_slots;
 };
 
