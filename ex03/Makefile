@@ -4,7 +4,7 @@ SRC = $(wildcard ./*.cpp)
 
 OBJ=$(SRC:.cpp=.o)
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 STD = -std=c++98
 

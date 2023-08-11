@@ -15,7 +15,50 @@ Character::Character( void )
 Character::Character (Character & copy){
     this->_used_slots = copy._used_slots;
     this->name = copy.name;
-    // this->slots = copy.slots;
+    int i = -1;
+    while (this->slots[++i])
+    {
+        delete slots[i];
+    }
+    i = -1;
+    while (copy.slots[++i])
+    {
+        if (copy.slots[i]->getType() == "cure")
+        {
+            this->slots[i] = new Cure();
+            this->slots[i] = copy.slots[i];
+        }
+        else
+        {
+            this->slots[i] = new Ice();
+            this->slots[i] = copy.slots[i];
+        }
+    }
+}
+
+void Character::operator=(Character &other)
+{
+    this->_used_slots = other._used_slots;
+    this->name = other.name;
+    int i = -1;
+    while (this->slots[++i])
+    {
+        delete slots[i];
+    }
+    i = -1;
+    while (other.slots[++i])
+    {
+        if (other.slots[i]->getType() == "cure")
+        {
+            this->slots[i] = new Cure();
+            this->slots[i] = other.slots[i];
+        }
+        else if (other.slots[i]->getType() == "ice")
+        {
+            this->slots[i] = new Ice();
+            this->slots[i] = other.slots[i];
+        }
+    }
 }
 
 Character::Character (std::string n)
@@ -28,12 +71,6 @@ Character::Character (std::string n)
     this->_used_slots = 0;
 }
 
-void Character::operator=(Character &other)
-{
-    this->_used_slots = other._used_slots;
-    this->name = other.name;
-    // this->slot = other.slot;
-}
 
 std::string const & Character::getName() const
 {
@@ -42,38 +79,13 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
+    int i = 0;
     if (this->_used_slots < 4)
     {
-        if (m->getType() == "ice")
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                if(!(this->slots[i]))
-                {
-                    this->slots[this->_used_slots] = new Ice();
-                    std::cout << "The ice type AMateria was aded to position: " << i << std::endl;
-                    this->_used_slots++;
-                    break ;
-                }
-            }
-
-        }
-        else if (m->getType() == "cure")
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                if (!this->slots[i])
-                {
-                    this->slots[this->_used_slots] = new Cure();
-                    std::cout << "The cure type AMateria was aded  to position: " << i  << std::endl;
-                    this->_used_slots++;
-                    break ;
-                }
-            }
-        }
-        else{
-            std::cout << "Unknown type of AMateria" << std::endl;
-        }
+            while(slots[i])
+                i++;
+            this->slots[i] = m;
+            this->_used_slots++;
     }
 }
 
@@ -91,24 +103,21 @@ void Character::unequip(int idx)
             }
             this->slots[idx] = 0;
             this->_used_slots--;
-            std::cout << "The " << idx << " slot is uneqiped" << std::endl;
         }
     }
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-    std::cout << "the " << idx << " slot was used to " << target.getName() << std::endl;
+    if (slots[idx])
+        this->slots[idx]->use(target);
 }
 
-// void Character::show_slot_type(int idx)
-// {
-//     if(this->slot[idx])
-//     {
-//         std::cout << "the slot type is " << this->slot[idx]->getType() << std::endl;
-//     }
-//     else{
-//         std::cout << "the slot is not exist" << std::endl;
-//     }
-// }
-
+Character::~Character(){
+    int i = 0;
+    while (slots[i])
+    {
+        delete this->slots[i];
+        i++;
+    }
+}
