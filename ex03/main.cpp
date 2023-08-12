@@ -6,19 +6,19 @@
 #include "./includes/IMateriaSource.hpp"
 #include "./includes/MateriaSource.hpp"
 
+
 int main()
 {
     // AMateria *ice1 = new Ice();
-    // AMateria *cure1 = new Cure();
+    // // AMateria *cure1 = new Cure();
     // ICharacter *hero = new Character("hero");
     // ICharacter *badGuy = new Character("badGuy");
     // hero->equip(ice1);
-    // badGuy->equip(cure1);
+    // badGuy->equip(ice1);
     // badGuy->use(0, *hero);
     // hero->use(0, *hero);
     // delete hero;
     // delete badGuy;
-
 
     //-----------
     IMateriaSource* src = new MateriaSource();
@@ -33,8 +33,8 @@ int main()
     ICharacter* bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);
-    delete bob;
-    delete me;
+    // delete bob;
+    // delete me;
     delete src;
 
     return (0);

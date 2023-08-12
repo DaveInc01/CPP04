@@ -15,8 +15,10 @@ void AMateria::operator=(AMateria &other)
     this->type = other.type;
 }
 
-AMateria::~AMateria () 
-{}
+AMateria::~AMateria ()
+{
+    
+}
 
 std::string const & AMateria::getType() const
 {

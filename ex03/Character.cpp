@@ -77,7 +77,7 @@ std::string const & Character::getName() const
     return this->name;
 }
 
-void Character::equip(AMateria* m)
+void Character::(AMateria* m)
 {
     int i = 0;
     if (this->_used_slots < 4)
@@ -118,6 +118,7 @@ Character::~Character(){
     while (slots[i])
     {
         delete this->slots[i];
+        this->slots[i] = NULL;
         i++;
     }
 }

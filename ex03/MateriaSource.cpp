@@ -41,10 +41,8 @@ MateriaSource::~MateriaSource()
         delete slots[i];
         i++;
     }
-    
-}
 
-//--------------------------------------------
+}
 
 void MateriaSource::learnMateria(AMateria *a)
 {

@@ -12,6 +12,13 @@ WrongCat::WrongCat( WrongCat &copy ) : WrongAnimal(copy)
     std::cout << "Copy constructor of WrongCat was called" << std::endl;
 }
 
+void WrongCat::operator=( WrongCat &other)
+{
+    this->type = other.type;
+    std::cout << "Copy constructor of WrongCat was called" << std::endl;
+}
+
+
 void WrongCat::makeSound(){
     std::cout << "Wrong cat says: Meow-Meow ˶ᵔ ᵕ ᵔ˶ " << std::endl;
 }

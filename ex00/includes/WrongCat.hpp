@@ -7,6 +7,7 @@ class WrongCat: public WrongAnimal{
 public:
     WrongCat( void );
     WrongCat( WrongCat &copy );
+    void operator=(WrongCat &other);
     void makeSound();
     ~WrongCat( void );
 };
