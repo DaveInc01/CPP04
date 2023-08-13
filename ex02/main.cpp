@@ -1,11 +1,11 @@
-#include "includes/Animal.hpp"
+#include "includes/AAnimal.hpp"
 #include "includes/Cat.hpp"
 #include "includes/Dog.hpp"
 #include "includes/WrongAnimal.hpp"
 #include "includes/WrongCat.hpp"
 
 int main(){
-    AAnimal* d = new Dog(); 
+    AAnimal* d = new Dog();
     AAnimal* c = new Cat();
 
     d->makeSound();
