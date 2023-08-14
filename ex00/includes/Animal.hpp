@@ -8,13 +8,13 @@
 class Animal {
 public:
     Animal( void );
-    Animal( Animal &copy );
-    void operator=(Animal &other);
-    ~Animal();
+    Animal( const Animal &copy );
+    Animal & operator=(const Animal &other);
+    virtual ~Animal();
     //setters and getters
     void setType( std::string tp );
-    std::string getType( void );
-    void makeSound( void );
+    std::string getType( void ) const;
+    void makeSound( void ) const;
 protected:
     std::string type;
 };

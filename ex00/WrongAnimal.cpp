@@ -11,12 +11,13 @@ WrongAnimal::WrongAnimal( WrongAnimal &copy )
     std::cout << "Copy constructor of WrongAnimal was called" << std::endl;
 }
 
-void WrongAnimal::operator=( WrongAnimal &other )
+WrongAnimal & WrongAnimal::operator=( WrongAnimal &other )
 {
     this->type = other.type;
+    return *this;
 }
 
-void WrongAnimal::makeSound(){
+void WrongAnimal::makeSound() const{
     std::cout << "The WrongAnimal sounds ..." << std::endl;
 }
 //getters and setters

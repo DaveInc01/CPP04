@@ -9,12 +9,12 @@ class WrongAnimal {
 public:
     WrongAnimal( void );
     WrongAnimal( WrongAnimal &copy );
-    void operator=(WrongAnimal &other);
-    ~WrongAnimal();
+    WrongAnimal & operator=(WrongAnimal &other);
+    virtual ~WrongAnimal();
     //setters and getters
     void setType( std::string tp );
     std::string getType( void );
-    void makeSound( void );
+    virtual void makeSound( void ) const;
 protected:
     std::string type;
 };

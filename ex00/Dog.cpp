@@ -6,18 +6,19 @@ Dog::Dog( void )
     this->type = "Dog";
 }
 
-Dog::Dog( Dog &copy ) : Animal(copy)
+Dog::Dog( const Dog &copy ) : Animal(copy)
 {
-    *this = copy;
+    this->type = copy.type;
     std::cout << "Copy constructor of Dog was called" << std::endl;
 }
 
-void Dog::operator=( Dog &other )
+Dog & Dog::operator=( const Dog &other )
 {
     this->type = other.type;
+    return *this;
 }
 
-void Dog::makeSound(){
+void Dog::makeSound() const{
     std::cout << "Haf-Haf (＾ᴥ＾)" << std::endl;
 }
 
