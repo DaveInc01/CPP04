@@ -5,7 +5,7 @@
 #include "includes/WrongCat.hpp"
 
 int main(){
-    Animal* d = new Dog(); 
+    Animal* d = new Dog();
     Animal* c = new Cat();
 
     d->makeSound();
@@ -30,6 +30,11 @@ int main(){
     for (int i = 0; i < 10; i++)
     {
         delete arr[i];
+    }
+
+    Dog basic;
+    {
+        Dog tmp = basic;
     }
 
     return (0);

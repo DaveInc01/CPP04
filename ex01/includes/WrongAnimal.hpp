@@ -8,13 +8,13 @@
 class WrongAnimal {
 public:
     WrongAnimal( void );
-    WrongAnimal( WrongAnimal &copy );
-    void operator=(WrongAnimal &other);
-    ~WrongAnimal();
+    WrongAnimal( const WrongAnimal &copy );
+    WrongAnimal & operator=(const WrongAnimal &other);
+    virtual ~WrongAnimal();
     //setters and getters
     void setType( std::string tp );
     std::string getType( void );
-    void makeSound( void );
+    void makeSound() const;
 protected:
     std::string type;
 };

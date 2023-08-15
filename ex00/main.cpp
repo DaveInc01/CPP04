@@ -5,13 +5,14 @@
 #include "includes/WrongCat.hpp"
 
 int main(){
-    Cat mia;
-    mia.setType("koshka");
-    mia.makeSound();
-    Dog rex;
-    rex.setType("sobaka");
-    rex.makeSound();
-    WrongCat kitty;
-    kitty.makeSound();
+    // std::cout << "ok\n";
+    Animal *mia = new Cat();
+    Animal *rex = new Dog();
+    // mia->setType("koshka");
+    // rex->setType("sobaka");
+    mia->makeSound();
+    rex->makeSound();
+    WrongAnimal *kitty = new WrongCat();
+    kitty->makeSound();
     return (0);
 }

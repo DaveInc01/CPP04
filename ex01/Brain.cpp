@@ -5,19 +5,20 @@ Brain::Brain( void )
     std::cout << "Default constructor of Brain was called" << std::endl;
 }
 
-Brain::Brain( Brain &copy )
+Brain::Brain( const Brain &copy )
 {
     *this = copy;
     std::cout << "Copy constructor of Brain was called" << std::endl;
 }
 
-void Brain::operator=( Brain &other )
+Brain & Brain::operator=( const Brain &other )
 {
     for (int i = 0; i < 100; i++)
     {
         this->ideas[i] = other.ideas[i];
     }
-    std::cout << "Brain Copy assignment operator was called" << std::endl;
+    std::cout << "Brain assignment operator was called" << std::endl;
+    return *this;
 }
 
 Brain::~Brain(){

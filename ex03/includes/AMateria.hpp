@@ -10,8 +10,8 @@ class AMateria
 {
 public:
     AMateria( void );
-    AMateria( AMateria& copy );
-    void operator=( AMateria& other );
+    AMateria( const AMateria& copy );
+    AMateria & operator=( const AMateria& other );
     virtual ~AMateria();
     AMateria(std::string const & type);
     std::string const & getType() const; //Returns the materia type

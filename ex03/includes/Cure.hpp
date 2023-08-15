@@ -13,9 +13,9 @@ public:
     Cure( void );
     Cure( Cure& );
     void operator=( Cure& other );
-    ~Cure();
-    AMateria* clone() const;
-    void use(ICharacter& target);
+    virtual ~Cure();
+    virtual AMateria* clone() const;
+    virtual void use(ICharacter& target);
 };
 
 #endif

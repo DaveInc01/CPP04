@@ -5,19 +5,20 @@ AMateria::AMateria (void)
     this->type = "unknown";
 }
 
-AMateria::AMateria (AMateria &copy)
+AMateria::AMateria (const AMateria &copy)
 {
     this->type = copy.type;
 }
 
-void AMateria::operator=(AMateria &other)
+AMateria & AMateria::operator=(const AMateria &other)
 {
     this->type = other.type;
+    return *this;
 }
 
 AMateria::~AMateria ()
 {
-    
+
 }
 
 std::string const & AMateria::getType() const
@@ -27,6 +28,6 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+    std::cout << " Definition use  " << target.getName() << std::endl;
 }
 

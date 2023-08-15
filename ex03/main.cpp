@@ -14,6 +14,7 @@ int main()
     AMateria *cure1 = new Cure();
     ICharacter *hero = new Character("hero");
     ICharacter *badGuy = new Character("badGuy");
+    hero = badGuy;
     hero->equip(ice1);
     hero->equip(ice2);
     hero->use(0, *badGuy);

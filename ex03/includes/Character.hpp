@@ -18,7 +18,7 @@ class Character : public ICharacter
 {
 public:
     Character ( void );
-    Character (Character &copy);
+    Character ( const Character &copy);
     Character ( std::string );
     Character& operator=(const Character &other);
     ~Character();
@@ -29,6 +29,7 @@ public:
 private:
     AMateria* slots[4];
     int _used_slots;
+    std::string name;
 };
 
 # endif

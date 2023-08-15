@@ -5,13 +5,13 @@ WrongAnimal::WrongAnimal( void )
     std::cout << "Default constructor of WrongAnimal was called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal( WrongAnimal &copy )
+WrongAnimal::WrongAnimal( const WrongAnimal &copy )
 {
-    *this = copy;
+    this->type = copy.type;
     std::cout << "Copy constructor of WrongAnimal was called" << std::endl;
 }
 
-WrongAnimal & WrongAnimal::operator=( WrongAnimal &other )
+WrongAnimal & WrongAnimal::operator=( const WrongAnimal &other )
 {
     this->type = other.type;
     return *this;

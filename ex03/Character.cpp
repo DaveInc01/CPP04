@@ -12,7 +12,8 @@ Character::Character( void )
     this->_used_slots = 0;
 }
 
-Character::Character (Character & copy){
+Character::Character ( const Character & copy){
+    std::cout << "in === operator" << std::endl;
     this->_used_slots = copy._used_slots;
     this->name = copy.name;
     int i = -1;
